@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	version="2.1">
+	<persistence-unit transaction-type="RESOURCE_LOCAL"	name="fpa">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>entity.Advisor</class>
+		<class>entity.Client</class>
+		<class>entity.Company</class>
+		<class>entity.Country</class>
+		<class>entity.Goal</class>
+		<class>entity.InflationRate</class>
+		<class>entity.NominalGrowth</class>
+		<class>entity.RiskLevel</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/fpa" />
+			<property name="javax.persistence.jdbc.user" value="postgres" />
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.password" value="taturana" />
+			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
+			<property name="eclipselink.weaving.eager" value="true"/>
+			<property name="javax.persistence.schema-generation.scripts.action" value="none"/>
+			<property name="javax.persistence.schema-generation.create-database-schemas" value="true"/>
+			<property name="eclipselink.ddl-generation.output-mode" value="database"/>
+			<property name="eclipselink.ddl-generation" value="none"/>
+		</properties>
+	</persistence-unit>
+</persistence>
